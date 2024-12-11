@@ -41,7 +41,7 @@ export default function About() {
           </a>
         </div>
 
-        <a href="/cv.pdf" download className="download-btn" aria-label="Download CV">
+        <a href="/Portfolio/cv.pdf" download className="download-btn" aria-label="Download CV">
           Download CV
         </a>
       </div>
