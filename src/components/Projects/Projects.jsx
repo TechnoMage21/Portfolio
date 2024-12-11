@@ -5,34 +5,35 @@ import ProjectImage2 from './Todolist.png';
 import ProjectImage3 from './Calculator.png';
 import ProjectImage4 from './Timer.png';
 
+
 const projects = [
   {
     id: 1,
-    title: 'KnowledgeNest',
-    description: 'This is an Online Library System with Admin as well as Student Portal.(MERN)',
+    title: 'DoctoPro-DMAS',
+    description: 'Data Medical Authentication ensures the integrity and authenticity of medical data within the DoctoPro system',
     image: ProjectImage1,
-    githubLink: 'https://github.com/dasritu/KnowledgeNest',
+    githubLink: 'https://github.com/TechnoMage21/DoctoPro',
   },
   {
     id: 2,
-    title: 'ToDoList',
-    description: 'Note your Work here for future ,with date and time.(REACT)',
+    title: 'DoctoCare',
+    description: 'People seek online services to consult trusted doctors, receive guidance, and arrange doorstep appointments.',
     image: ProjectImage2,
-    githubLink: 'https://github.com/dasritu/ToDoList-React',
+    githubLink: 'https://github.com/TechnoMage21/DoctoCare',
   },
   {
     id:3,
-    title:'Calculator',
-    description:'Calculator Using React',
+    title:'Portfolio',
+    description:'A portfolio showcasing skills, projects, and achievements, demonstrating expertise and creativity in various fields.',
     image:ProjectImage3,
-    githubLink:'https://github.com/dasritu/Calculator-React-',
+    githubLink:'https://github.com/TechnoMage21/Portfolio',
   },
   {
     id:3,
-    title:'Timer',
-    description:'Timer Using React',
+    title:'Git Tutorial',
+    description:'Welcome to the Git Tutorial! Learn installation, version control, and Git usage with this guide.',
     image:ProjectImage4,
-    githubLink:'https://github.com/dasritu/TimerReact',
+    githubLink:'https://github.com/TechnoMage21/Git_Tutorial',
   }
  
 ];
@@ -40,7 +41,7 @@ const projects = [
 export default function Projects() {
   return (
     <div className="projects-section">
-      <h2>My Projects</h2>
+      <h2><b>PROJECTS</b></h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">

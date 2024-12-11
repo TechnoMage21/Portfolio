@@ -1,25 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { HashLink as NavLink } from 'react-router-hash-link';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Nav.css'; // Custom CSS for Navbar styles
 
 function FirstComponent() {
-  // Function to collapse navbar
+  const [navbarSticky, setNavbarSticky] = useState(false);
+
+  // Change navbar style when user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setNavbarSticky(true);
+      } else {
+        setNavbarSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Function to collapse navbar on mobile after a link click
   const collapseNavbar = () => {
     const navbarToggler = document.querySelector('.navbar-toggler');
     if (navbarToggler) {
-      // Click the navbar toggler to collapse the menu
       navbarToggler.click();
     }
   };
 
   return (
     <>
-      <Navbar expand="lg" fixed="top" className='navbar'>
+      <Navbar expand="md" fixed="top" className={`navbar ${navbarSticky ? 'navbar-sticky' : ''}`}>
         <Container>
-          <Navbar.Brand href="#home"><b>Rituparna Das</b></Navbar.Brand>
+          <Navbar.Brand href="#home"><b>Om Gupta</b></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

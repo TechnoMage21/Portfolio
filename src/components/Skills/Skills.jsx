@@ -3,60 +3,37 @@ import Card from "react-bootstrap/Card";
 import "./Skills.css";
 import html from './html.png';
 import css from './css.png';
-import java from './java.png';
+import mysql from './mysql.jpg';
 import js from './js.png';
 import react from './react.png';
-import solidity from './solidity.png';
+import php from './php.png'
+
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 
 export default function Skills() {
   return (
-    <>
-      <div className="skill-main" id="skill">
-        <div className="skill-text">
-          <h1>Skills <span className="icon"><MenuBookRoundedIcon fontSize="inherit" style={{color:"#602979"}}/></span></h1>
-          
-        </div>
-        <div className="skillmain-card">
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={html} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={css} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={java} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={js} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={react} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-          <Card className="skillCards">
-            <Card.Body variant="primary">
-              <Card.Img variant="top" src={solidity} style={{width:'70%'}}/>
-              
-            </Card.Body>
-          </Card>
-
-        </div>
+    <div className="skill-main" id="skill">
+      <div className="skill-text">
+        <br />
+        
+        <h1>Skills <span className="icon"><MenuBookRoundedIcon fontSize="inherit" style={{color:"#602979"}}/></span></h1>
       </div>
-    </>
+      <div className="skillmain-card">
+        {[
+          { src: html, alt: 'HTML' },
+          { src: css, alt: 'CSS' },
+          { src: mysql, alt: 'MySQL' },
+          { src: js, alt: 'JavaScript' },
+          { src: react, alt: 'React' },
+          { src: php, alt: 'PHP' }
+        ].map((item, index) => (
+          <Card className="skillCards" key={index}>
+            <Card.Body>
+              <Card.Img variant="top" src={item.src} alt={item.alt} />
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 }

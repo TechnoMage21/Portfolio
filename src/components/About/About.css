@@ -3,7 +3,9 @@
   justify-content: center;
   height: 100vh;
   align-items: center;
+  padding: 0 20px; /* Add some padding on smaller screens */
 }
+
 .about-section {
   padding: 50px;
   text-align: center;
@@ -11,21 +13,26 @@
   opacity: 0; /* Start invisible */
   transform: translateY(20px); /* Start slightly translated */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  max-width: 800px; /* Limit the width of the section */
+  width: 100%; /* Make sure it takes full width on smaller screens */
 }
 
 .about-section h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
+
 .about-section.animate {
   opacity: 1; /* Fade in */
   transform: translateY(0); /* Move to original position */
 }
+
 .about-section p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
+
 .download-btn {
   display: inline-block;
   margin-top: 20px;
@@ -41,4 +48,68 @@
 
 .download-btn:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (tablets) */
+@media (max-width: 1024px) {
+  .about-section h1 {
+    font-size: 30px; /* Adjust the heading size for tablets */
+  }
+
+  .about-section p {
+    font-size: 16px; /* Adjust text size for tablets */
+  }
+
+  .download-btn {
+    font-size: 14px; /* Smaller button text for tablets */
+    padding: 8px 16px; /* Slightly smaller padding */
+  }
+}
+
+/* Small Screens (phones) */
+@media (max-width: 768px) {
+  .about {
+    height: auto; /* Allow content to overflow on smaller screens */
+    padding-top: 50px; /* Add some padding at the top */
+    padding-bottom: 50px; /* Add some padding at the bottom */
+  }
+
+  .about-section {
+    padding: 30px; /* Less padding for smaller screens */
+  }
+
+  .about-section h1 {
+    font-size: 28px; /* Reduce font size for mobile screens */
+  }
+
+  .about-section p {
+    font-size: 15px; /* Smaller text on mobile */
+  }
+
+  .download-btn {
+    font-size: 14px; /* Adjust button font size for mobile */
+    padding: 8px 16px; /* Smaller padding for mobile */
+  }
+}
+
+/* Extra Small Screens (very small phones) */
+@media (max-width: 414px) {
+  .about-section {
+    padding: 20px; /* Even less padding on very small screens */
+  }
+
+  .about-section h1 {
+    font-size: 24px; /* Reduce heading size further */
+  }
+
+  .about-section p {
+    font-size: 14px; /* Smaller text size for very small screens */
+  }
+
+  .download-btn {
+    font-size: 12px; /* Make the button text smaller */
+    padding: 6px 12px; /* Adjust button padding */
+  }
 }
