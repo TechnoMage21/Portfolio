@@ -1,0 +1,87 @@
+.Education {
+  margin-top: 10vh;
+  overflow: hidden; 
+}
+
+.Education h2 {
+  color: rgb(82, 66, 80);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  display: flex; /* Center icon and text vertically */
+  align-items: center;
+  justify-content: center;
+}
+
+.main-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 1200px;
+  padding: 0 10px; /* Prevent overflow */
+}
+
+.cards {
+  width: calc(40% - 70px);
+  margin: 20px;
+  border: none !important;
+  background: #f5f5f5 ;
+  padding: 20px !important;
+  font-size: 16px !important;
+  box-shadow: 5px 3px #cf65ff;
+  min-width: 18rem;
+  height: 30vh;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+  cursor: pointer;
+  
+}
+.cards:hover{
+ transform: scale(1.2);
+ animation: scale-up 0.5s forwards;
+ box-shadow: 5px 3px #f5f5f5;
+ background: #cd86ef;
+
+}
+
+@keyframes scale-up {
+  from {
+      transform: scale(1);
+  }
+
+  to {
+      transform: scale(1.08);
+  }
+}
+
+.cards.animate-left {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
+.cards.animate-right {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+.cards.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    width: calc(100% - 40px); /* Full width minus margin on smaller screens */
+  }
+}
+
+@media (max-width: 414px) {
+  .cards {
+    width: calc(100% - 20px); /* Full width minus margin on very small screens */
+  }
+}

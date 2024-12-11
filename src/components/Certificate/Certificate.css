@@ -1,0 +1,85 @@
+.main-cercard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px;
+  padding: 20px;
+}
+.certificate{
+  opacity: 0; /* Start invisible */
+  transition: opacity 1s ease-out; 
+  margin-top:10vh;
+}
+.certificate.animate {
+  opacity: 1; /* Fade in */
+}
+.cercards {
+  width: calc(35% - 20px); /* Two cards per line */
+  margin: 10px;
+  perspective: 1000px; /* For 3D effect */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for the card */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cercards:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-content, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-content {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.card-back {
+  background-color:white;
+  transform: rotateY(180deg);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius:34px; */
+  box-shadow: 8px 7px 20px grey;
+}
+.card-back h4{
+  color: rgb(90, 15, 15);
+}
+.cercard-img {
+  width: 90%;
+  height: 100%;
+  object-fit:fill;
+   /* Ensure the image covers the card */
+   border:3px solid pink;
+   /* border-radius: 34px; */
+   box-shadow: 8px 7px 20px grey;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cercards {
+    width: calc(100% - 20px); /* One card per line on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-inner {
+    height: 200px; /* Adjust height for very small screens */
+  }
+}

@@ -1,0 +1,146 @@
+.projects-section {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* Adjust height to fit content */
+  margin-top: 20vh;
+}
+
+.projects-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1200px; /* Adjust to limit the maximum width of the grid */
+  width: 100%;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  width: 86%;
+  height: 150px;
+  
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-info h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.project-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.github-link:hover {
+  background-color: #555;
+}
+
+/* Responsive Styles for Tablets */
+@media (max-width: 768px) {
+  .projects-section {
+      padding: 15px;
+  }
+
+  .projects-section h2 {
+      font-size: 26px;
+  }
+
+  .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .project-card {
+      margin: 10px;
+  }
+
+  .project-info {
+      padding: 12px;
+  }
+
+  .project-info h3 {
+      font-size: 17px;
+  }
+
+  .project-info p {
+      font-size: 13px;
+  }
+
+  .github-link {
+      padding: 7px 14px;
+      font-size: 13px;
+  }
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 480px) {
+  .projects-section {
+      padding: 10px;
+      margin-top: 10vh; /* Adjust margin for better spacing on mobile */
+  }
+
+  .projects-section h2 {
+      font-size: 24px;
+  }
+
+  .projects-grid {
+      grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+      gap: 10px; /* Adjust gap for better spacing */
+  }
+
+  .project-card {
+      margin: 10px 0; /* Adjust margin for vertical stacking */
+  }
+
+  .project-info {
+      padding: 10px;
+  }
+
+  .project-info h3 {
+      font-size: 16px;
+  }
+
+  .project-info p {
+      font-size: 12px;
+  }
+
+  .github-link {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+}
