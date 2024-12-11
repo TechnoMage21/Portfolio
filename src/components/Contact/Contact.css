@@ -1,3 +1,4 @@
+/* General Styling */
 .contact {
     display: flex;
     justify-content: center;
@@ -7,26 +8,25 @@
     padding: 20px;
     box-sizing: border-box;
 }
-.contact-heading{
+
+.contact-heading {
     color: #944ab5;
     text-transform: uppercase;
     font-stretch: extra-expanded;
-    text-align: right;
+    text-align: center;
     font-family: inherit;
+    margin-bottom: 20px;
 }
-.btn-contact{
-   
-    background: #944ab5 !important;
-    font-weight: bold;
-}
+
 .form {
-    background-color: transparent;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px; /* Increased max-width for better appearance on larger screens */
+    max-width: 480px;  /* Adjusted to be more responsive */
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 .form input {
@@ -47,7 +47,7 @@
 .form button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #944ab5;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -58,9 +58,25 @@
 }
 
 .form button:hover {
-    background-color: #0056b3;
+    background-color: #732e8f;
 }
 
+.form button:disabled {
+    background-color: #ccc;
+}
+
+.input-error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Toast Container Styling */
 .Toastify__toast-container {
     font-size: 16px;
 }
@@ -75,14 +91,15 @@
     color: #fff;
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .contact {
-        padding: 10px;
+        padding: 15px;
     }
 
     .form {
         padding: 15px;
+        max-width: 90%;  /* Ensure the form takes up more of the screen on small devices */
     }
 
     .form input {
@@ -93,5 +110,34 @@
     .form button {
         padding: 10px;
         font-size: 14px;
+    }
+
+    .contact-heading {
+        font-size: 24px;  /* Smaller heading on mobile */
+    }
+
+    .form {
+        box-shadow: none;  /* Remove shadow for smaller screens to save space */
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .contact-heading {
+        font-size: 20px;  /* Reduce heading size even more for very small screens */
     }
 }

@@ -1,52 +1,69 @@
+/* Global Styles */
 .skill-main {
-  height: 100vh;
+  height: auto;
+  padding: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 30px;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .skill-text {
-  width: 30%;
-  margin: 20px;
-  border: none;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
   padding: 20px;
-  border-radius: 20px;
-  opacity: 0;
-  transform: translateX(-100%);
-  animation: slideInLeft 0.7s forwards;
 }
 
 .skill-text h1 {
   color: #4a250a;
-  font-size: 23px;
+  font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-text .icon {
+  margin-left: 10px;
+  color: #602979;
 }
 
 .skillmain-card {
-  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.skillCards {
+  width: 200px; /* Base width for the card */
+  min-width: 180px;
+  max-width: 250px;
   margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-
-.skillCards {
-  width: calc(25% - 70px);
-  margin: 20px;
-  border: none;
-  min-width: 20%;
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideInRight 0.7s forwards;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .skillCards img {
   width: 100%;
-  height: auto; /* Ensure images maintain their aspect ratio */
-  object-fit: contain; /* Ensure images fit within their container */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skillCards:hover {
+  transform: translateY(-10px);
+}
+
+.skillCards:hover img {
+  transform: scale(1.05);
 }
 
 /* Keyframes for animation */
@@ -72,106 +89,94 @@
   }
 }
 
-/* Responsive Styles for Tablets */
+/* Mobile-First (Base Styles for Smaller Screens) */
 @media (max-width: 768px) {
-  .skill-main {
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .skill-text {
-    width: 100%;
-    margin-bottom: 20px;
-    transform: translateX(0);
-    animation: none; /* Disable animation for better UX on small screens */
-    opacity: 1; /* Ensure text is visible */
-    font-size: 30px; /* Increase font size */
-  }
-
   .skill-text h1 {
-    font-size: 50px; /* Adjust font size for heading */
+    font-size: 40px;
   }
 
   .skillmain-card {
-    width: 100%;
-    margin: 0;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .skillCards {
+    width: 45%; /* Cards take up 45% of the container */
+  }
+
+  .skillCards img {
+    width: 80%;
+  }
+}
+
+/* Tablet (Width <= 1024px) */
+@media (max-width: 1024px) {
+  .skill-text h1 {
+    font-size: 50px;
+  }
+
+  .skillmain-card {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .skillCards {
+    width: 30%;
+  }
+
+  .skillCards img {
+    width: 80%;
+  }
+}
+
+/* Small Devices (Max-width <= 414px, iPhone XR) */
+@media (max-width: 414px) {
+  .skill-main {
+    padding: 20px;
+  }
+
+  .skill-text h1 {
+    font-size: 30px;
+  }
+
+  .skillmain-card {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .skillCards {
+    width: 80%; /* Make cards wider on very small screens */
+    margin: 10px auto;
+  }
+
+  .skillCards img {
+    width: 70%; /* Make images smaller */
+  }
+}
+
+/* Mobile (Width <= 480px) */
+@media (max-width: 480px) {
+  .skill-main {
+    padding: 10px;
+  }
+
+  .skill-text h1 {
+    font-size: 28px;
+  }
+
+  .skillmain-card {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .skillCards {
     width: 45%;
-    margin: 10px;
-    transform: translateX(0);
-    animation: none;
-    opacity: 1;
+    margin: 10px auto;
   }
 
   .skillCards img {
-    width: 80%; /* Adjust image size */
-    height: auto;
-  }
-}
-
-/* Responsive Styles for iPhone XR (414px width) */
-@media (max-width: 414px) {
-  .skill-main {
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .skill-text {
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 26px; /* Adjust font size for iPhone XR */
-  }
-
-  .skill-text h1 {
-    font-size: 30px; /* Adjust heading font size for iPhone XR */
-  }
-
-  .skillmain-card {
-    width: 100%;
-    margin: 0;
-  }
-
-  .skillCards {
-    width: 90%; /* Make cards wider on very small screens */
-    margin: 10px auto; /* Center cards and adjust vertical spacing */
-  }
-
-  .skillCards img {
-    width: 60%; /* Make images smaller for iPhone XR */
-    height: auto;
-  }
-}
-
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 480px) {
-  .skill-main {
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .skill-text {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .skill-text h1 {
-    font-size: 50px; /* Adjust font size for heading */
-  }
-
-  .skillmain-card {
-    width: 100%;
-    margin: 0;
-  }
-
-  .skillCards {
-    width: 50%; /* Make cards wider on very small screens */
-    margin: 10px auto; /* Center cards and adjust vertical spacing */
-  }
-
-  .skillCards img {
-    width: 70%; /* Make images smaller for very small screens */
-    height: auto;
+    width: 60%;
   }
 }

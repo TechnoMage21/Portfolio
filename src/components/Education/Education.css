@@ -1,6 +1,7 @@
 .Education {
   margin-top: 10vh;
-  overflow: hidden; 
+  overflow: hidden;
+  padding: 0 10px; /* Prevent overflow */
 }
 
 .Education h2 {
@@ -9,9 +10,10 @@
   font-weight: bold;
   font-size: 2.5em;
   text-transform: uppercase;
-  display: flex; /* Center icon and text vertically */
+  display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .main-card {
@@ -19,53 +21,47 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
   max-width: 1200px;
-  padding: 0 10px; /* Prevent overflow */
+  gap: 20px; /* Adds space between the cards */
 }
 
+/* Cards' Base Styles */
 .cards {
-  width: calc(40% - 70px);
+  width: calc(33.33% - 40px); /* Three cards per row by default */
   margin: 20px;
   border: none !important;
-  background: #f5f5f5 ;
+  background: #f5f5f5;
   padding: 20px !important;
   font-size: 16px !important;
   box-shadow: 5px 3px #cf65ff;
   min-width: 18rem;
-  height: 30vh;
+  height: auto;
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out, box-shadow 0.3s ease-out;
+  box-sizing: border-box;
   cursor: pointer;
-  
+  border-radius: 10px; /* Rounded corners for cards */
 }
-.cards:hover{
- transform: scale(1.2);
- animation: scale-up 0.5s forwards;
- box-shadow: 5px 3px #f5f5f5;
- background: #cd86ef;
 
+.cards:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background: #cd86ef;
 }
 
 @keyframes scale-up {
   from {
-      transform: scale(1);
+    transform: scale(1);
   }
-
   to {
-      transform: scale(1.08);
+    transform: scale(1.08);
   }
 }
 
 .cards.animate-left {
-  transform: translateX(-100%);
-  opacity: 1;
-}
-
-.cards.animate-right {
-  transform: translateX(100%);
+  transform: translateX(0);
   opacity: 1;
 }
 
@@ -74,14 +70,42 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+
+/* Medium Screens (tablets) */
+@media (max-width: 1024px) {
   .cards {
-    width: calc(100% - 40px); /* Full width minus margin on smaller screens */
+    width: calc(45% - 40px); /* Two cards per row */
   }
 }
 
+/* Small Screens (phones) */
+@media (max-width: 768px) {
+  .cards {
+    width: calc(100% - 40px); /* Full width minus margin */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .Education h2 {
+    font-size: 2em; /* Adjust the title font size */
+  }
+}
+
+/* Extra small screens (very small phones) */
 @media (max-width: 414px) {
   .cards {
-    width: calc(100% - 20px); /* Full width minus margin on very small screens */
+    width: calc(100% - 20px); /* Full width minus margin */
+    padding: 12px; /* Less padding */
+  }
+
+  .Education h2 {
+    font-size: 1.8em; /* Slightly smaller font size */
+  }
+}
+
+/* Adjust spacing for very small screens (accessibility tweaks) */
+@media (max-width: 480px) {
+  .main-card {
+    gap: 10px; /* Reduce gap between cards */
   }
 }
