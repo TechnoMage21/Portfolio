@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.78a3c8ac.css",
+    "main.js": "/Portfolio/static/js/main.49b5a58c.js",
+    "static/media/unstop.png": "/Portfolio/static/media/unstop.b4efb46f775513e35279.png",
+    "static/media/Coursera.png": "/Portfolio/static/media/Coursera.223ad57adee458f13d4d.png",
+    "static/media/Coursera_web.png": "/Portfolio/static/media/Coursera_web.0b787c6f2584f669d58b.png",
+    "static/media/google.png": "/Portfolio/static/media/google.c035ab3ec23074953e9c.png",
+    "static/media/Calculator.png": "/Portfolio/static/media/Calculator.df6e782a5f017078d976.png",
+    "static/media/KnowledgeNest.png": "/Portfolio/static/media/KnowledgeNest.0386b12d741f017627e3.png",
+    "static/media/Todolist.png": "/Portfolio/static/media/Todolist.d37270b582c7c1266bd9.png",
+    "static/media/udemy.png": "/Portfolio/static/media/udemy.1acd659d9eba8e7d0cff.png",
+    "static/media/softskill.png": "/Portfolio/static/media/softskill.6fbcf87846cf3c381e95.png",
+    "static/media/nptel.png": "/Portfolio/static/media/nptel.f4ebb6b15afec53f5518.png",
+    "static/media/react.png": "/Portfolio/static/media/react.35639ed930462bfcd544.png",
+    "static/media/html.png": "/Portfolio/static/media/html.a92a549a591f4acb527a.png",
+    "static/media/hero-image.png.avif": "/Portfolio/static/media/hero-image.png.d5f50e0cb5f318d8e8b9.avif",
+    "static/media/css.png": "/Portfolio/static/media/css.4a6549b8c2b4cda8bb88.png",
+    "static/media/js.png": "/Portfolio/static/media/js.3dfb665e058d08c99f28.png",
+    "index.html": "/Portfolio/index.html",
+    "main.78a3c8ac.css.map": "/Portfolio/static/css/main.78a3c8ac.css.map",
+    "main.49b5a58c.js.map": "/Portfolio/static/js/main.49b5a58c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78a3c8ac.css",
+    "static/js/main.49b5a58c.js"
+  ]
+}
